@@ -32,6 +32,13 @@ else ifeq ($(CONFIG_KTM_DTB),y)
 OPLUS_SUN_BOARDS += ktm-24851-sun-overlay-gauge-ti.dtbo\
                     ktm-24851-sun-overlay-gauge-mpc.dtbo\
                     ktm-24851-sun-overlay-gauge-ti-dvt2.dtbo
+else
+# kernel_platform passes no board, so default to the OnePlus 13 like the
+# LineageOS build with CONFIG_DODGE_DTB=y.
+OPLUS_SUN_BOARDS += dodge-23821-sun-overlay.dtbo\
+                    dodge-23821-sun-overlay-T0.dtbo\
+                    dodge-23893-sun-overlay.dtbo\
+                    dodge-23893-sun-overlay-T0.dtbo
 endif
 
 dtb-y += $(OPLUS_SUN_BOARDS) $(SUN_BASE_DTB)
